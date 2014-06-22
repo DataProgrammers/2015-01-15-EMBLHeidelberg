@@ -7,5 +7,6 @@ Description: An introduction to literate programming and reproducible
 	     research authoring using R, markdown, knitr and other
 	     packages.
 VignetteBuilder: knitr
+Imports: utils
 Suggests: knitr
-License: GLP-3
+License: GPL-3

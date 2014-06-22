@@ -1,2 +1,4 @@
+importFrom(utils, packageVersion)
+
 export(rauthoring,
        simple)
