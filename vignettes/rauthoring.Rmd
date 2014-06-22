@@ -11,18 +11,47 @@ Authoring document for `R`
 # Introduction
 
 This document introduces some tools to author documents that contain
-analysis results produced with =R=. Bringing data, results and their
+analysis results produced with `R`. Bringing data, results and their
 interpretation is essential for assuring reproducibility of an
 analysis pipeline and the results and comprehensively communicating
 these results to your collaborators. A popular solution for this is
 *literate programming*, a technique and set of tools that permit to
 
-- combine text and code within a single document
-- extract and execute the code
-- replace the original code chunks by their results into the original
-  document
-- compile the document into a final easily read format such as pdf or
-  html.
+1. Write text and code within a single document. Here we will use the
+   simple markdown syntax and include `R` code chunks; such documents
+   are denoted *R markdown* and have the `Rmd` extension.
+2. Extract (called *tangling*) and execute the code
+3. Replace the original code chunks by their results into the original
+   document (called *weaving*).
+4. Compile the document into a final easily read format such as pdf or
+   html.
+
+Steps 2 to 4 are can be executed individually or automated into a
+single command such as `knit2html` from the `knitr` package or using
+editors such as Rstudio.
+
+# Markdown syntax
+
+The figure below, taken from
+[the Rstudio markdown (v2) tutorial](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html)
+illstrates basic markdown syntax and its output using Rstudio.
+
+- Headers can be defined using `======` or `-----` (level 1 and 2
+  respectively) or one or multiple `#` (for level 1 or lower).
+
+- Italic and bold fonts are defined using one to two `*` around the
+  text.
+
+- Bullet lists items start with a `-`.
+
+- In-line code and verbatim expression are surrounded by back ticks.
+
+- Code blocks start and end with three back ticks.
+
+- Starting a line with `>` offsets the text. 
+
+![Markdow basics](./Figures//markdownOverview.png)
+
 
 
 ```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
