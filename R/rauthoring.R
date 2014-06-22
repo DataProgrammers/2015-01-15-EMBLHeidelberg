@@ -1,7 +1,7 @@
 msg <- list(c("open the 'rauthoring' vignette:",
               "vignettes('rauthoring', package = 'rauthoring')"),
              c("copy a simple template in your working directory:",
-               "simple()"),
+               "rmdtemplate()"),
             c("display this message:",
               "rauthoring()"))
 
@@ -13,8 +13,8 @@ msg <- list(c("open the 'rauthoring' vignette:",
 ##' @return Used to its side effect. Returns output of
 ##' \code{file.copy}.
 ##' @author Laurent Gatto
-simple <- function(to = getwd(), ...) {
-    from <- system.file("extdata/simple.Rmd", package = "rauthoring")
+rmdtemplate <- function(to = getwd(), ...) {
+    from <- system.file("extdata/rmdtemplate.Rmd", package = "rauthoring")
     file.copy(from, to, ...)    
 }
 

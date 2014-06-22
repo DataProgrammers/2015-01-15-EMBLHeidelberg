@@ -8,7 +8,9 @@
 Authoring document for `R`
 ========================
 
-# Introduction
+# `R` Markdown
+
+## Introduction
 
 This document introduces some tools to author documents that contain
 analysis results produced with `R`. Bringing data, results and their
@@ -30,39 +32,90 @@ Steps 2 to 4 are can be executed individually or automated into a
 single command such as `knit2html` from the `knitr` package or using
 editors such as Rstudio.
 
-# Markdown syntax
+## Markdown syntax
 
 The figure below, taken from
 [the Rstudio markdown (v2) tutorial](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html)
 illstrates basic markdown syntax and its output using Rstudio.
 
 - Headers can be defined using `======` or `-----` (level 1 and 2
-  respectively) or one or multiple `#` (for level 1 or lower).
+  respectively) or one or multiple `#` (for level 1, 2,
+  ... respectively).
 
 - Italic and bold fonts are defined using one to two `*` around the
   text.
 
 - Bullet lists items start with a `-`.
 
-- In-line code and verbatim expression are surrounded by back ticks.
+- In-line code and verbatim expression are surrounded by  `` ` ``.
 
 - Code blocks start and end with three back ticks.
 
 - Starting a line with `>` offsets the text. 
 
-![Markdow basics](./Figures//markdownOverview.png)
+![Markdow basics](./Figures/markdownOverview.png)
+
+## `R` code chunks
+
+To include `R` code in the R markdown file, the native code chunk
+syntax is augmented with code chunk tags inside `{r, ...}`, as
+illstrated below:
+
+![Markdown code chunk](./Figures/markdownChunk.png)
+
+The following optinal code chunk options are available:
+
+- `{r, chunkname}` the first unnamed string is used to name the code
+  chunk; useful for following the code execution and debugging.
+
+- `{r, eval=TRUE}` by default the code in the chunk is
+  executed. Alternatively, set `eval=FALSE`.
+
+- `{r, echo=TRUE}` by default, the code is displayed before the
+  output. Use `echo=FALSE` to hide the code.
+
+- Control if messages, warnings or errors are to be displayed with
+  `{r, message=TRUE, warning=TRUE, error=TRUE}`.
+
+- Figure dimensions can be controlled with `fig.height` and
+  `fig.width`.
+
+To execute in-line code, use `` ` r 1+1` `` (no space between `` ` ``
+and `r`).
+
+## From `Rmd` to `html`
+
+If you are using Rstudio, the simplest way to generate your final
+output is to open your `Rmd` file and click the `Knit HTML` (or `Knit
+PDF`, ...) button. From `R`, you can use the `knit2html` function and
+give the `Rmd` as input. Both options will use the `knit` function to
+*weave* the document and generate the markdown `md` file that includes
+the code outputs. The generation of the final output will depend on
+the software version you use: either `markdown::markdownToHTML` or
+`rmarkdown::render` functions.
 
 
+> Exercise: Experiment with R markdown and the features described so
+> far. Either create your `Rmd` file from scratch or use the simple
+> template from the `rauthoring` package with `rmdtemplate()`.
 
-```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
-x <- c("Hello", "world")
-x <- paste(x, collapse = " ")
-cat(x)
+## More markdown
+
+# ReportingTools
+
+The Bioconductor [`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html) ...
+
+# Web applications with `shiny`
+
+# Session information
+
+```{r, echo=FALSE}
+sessionInfo()
 ```
 
 # References
 
 - `knitr` and `Sweave` package
-- `markdown` and `rmarkdown`
-- `ReportingTools'
+- `markdown` and `rmarkdown` packages
+- `ReportingTools`
 - `shiny`
