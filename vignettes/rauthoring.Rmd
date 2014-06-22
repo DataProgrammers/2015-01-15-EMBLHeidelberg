@@ -1,0 +1,39 @@
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{R Authoring}
+%\VignetteKeywords{vignette, markdown, knitr, shiny, ReportingTools}
+%\VignettePackage{rauthoring}
+-->
+
+Authoring document for `R`
+========================
+
+# Introduction
+
+This document introduces some tools to author documents that contain
+analysis results produced with =R=. Bringing data, results and their
+interpretation is essential for assuring reproducibility of an
+analysis pipeline and the results and comprehensively communicating
+these results to your collaborators. A popular solution for this is
+*literate programming*, a technique and set of tools that permit to
+
+- combine text and code within a single document
+- extract and execute the code
+- replace the original code chunks by their results into the original
+  document
+- compile the document into a final easily read format such as pdf or
+  html.
+
+
+```{r, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+x <- c("Hello", "world")
+x <- paste(x, collapse = " ")
+cat(x)
+```
+
+# References
+
+- `knitr` and `Sweave` package
+- `markdown` and `rmarkdown`
+- `ReportingTools'
+- `shiny`

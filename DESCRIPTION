@@ -1,0 +1,11 @@
+Package: rauthoring
+Title: An introduction to authoring literate programming documents.
+Version: 0.1
+Author: Laurent Gatto <lg390@cam.ac.uk>
+Maintainer: Laurent Gatto <lg390@cam.ac.uk>
+Description: An introduction to literate programming and reproducible
+	     research authoring using R, markdown, knitr and other
+	     packages.
+VignetteBuilder: knitr
+Suggests: knitr
+License: GLP-3
