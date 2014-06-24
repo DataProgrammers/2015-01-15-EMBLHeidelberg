@@ -22,22 +22,30 @@ library("XML")
 ```
 
 The following code chunk, with argument `results='asis'` will produce
-the dynamic table below.
+the dynamic table below. Note that we need to specify the final
+vignette destination directory (`instDoc`) for the JavaScript code to
+be effectively inserted in the vignette. If it were not for a
+vignette, the `reportDirectory` would be the directory containing
+the report file.
 
 ```{r, reptoolsknitr0, eval=FALSE}
 library("ReportingTools")
 library("XML")
+instDoc <- file.path("..", "inst", "doc")
 htmlRep <- HTMLReport(shortName = "knitrReport",
                       handlers = knitrHandlers,
-                      reportDirectory = ".")
-htmlRep[["mtcars"]] <- mtcars  ##this line is equivalent to the line above
+                      reportDirectory = instDoc)
+htmlRep[["mtcars"]] <- mtcars 
 ```
 
 ```{r, reptoolsknitr, results = 'asis', echo=FALSE}
 library("ReportingTools")
 library("XML")
+instDoc <- file.path("..", "inst", "doc")
 htmlRep <- HTMLReport(shortName = "knitrReport",
                       handlers = knitrHandlers,
-                      reportDirectory = ".")
-htmlRep[["mtcars"]] <- mtcars  ##this line is equivalent to the line above
+                      reportDirectory = instDoc)
+htmlRep[["mtcars"]] <- mtcars  
 ```
+
+See also `ReporterTools`'s `knitr` vignette.
