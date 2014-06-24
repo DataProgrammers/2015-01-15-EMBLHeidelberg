@@ -16,7 +16,8 @@ rauthoring.html: rauthoring.Rmd
 
 
 knitrreptools.html: knitrreptools.Rmd
-	"$(R_HOME)/bin/R" --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
+	## "$(R_HOME)/bin/R" --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
+	/opt/Rpatched/bin/R --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
 
 clean: 
 	rm -f *~

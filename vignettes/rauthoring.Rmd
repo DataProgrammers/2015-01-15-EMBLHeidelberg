@@ -151,7 +151,8 @@ kable(head(mtcars))
   converts mardown to html and many other formats.
 
 > Try out some of these additional features in your own `Rmd` file or
-> look at this vignettes source code. Find where it is with ``
+> look at this vignettes source code. Find where it is with
+> `system.file("doc/rauthoring.Rmd", package = "rauthoring")`.
 
 # ReportingTools
 
@@ -184,11 +185,11 @@ publish(mtcars, htmlRep)
 finish(htmlRep)
 browseURL("./reports/htmltable.html")
 ```
+> Generate the above dynamic html table as shown above.
 
 In particular, it seamlessly integrates with `kntir` and R markdown
-documents, as illustrated in the `knitrreptools' vignette, available
-with `vignette("knitrreptools", package = "rauthoring")`.
-
+documents, as illustrated in the
+[`knitrreptools` vignette](./knitrreptools.html). 
 
 See the `ReportingTools` vignettes for more details and other use cases:
 
@@ -206,7 +207,10 @@ sessionInfo()
 
 # References
 
-- `[knitr](http://yihui.name/knitr/)`
-- `markdown` and `rmarkdown` packages
-- `ReportingTools`
-- `shiny`
+- The [`knitr`](http://yihui.name/knitr/) package
+- [`markdown`](http://cran.r-project.org/web/packages/markdown/index.html)
+  and [`rmarkdown`](https://github.com/rstudio/rmarkdown/) packages
+- [R markdown](http://rmarkdown.rstudio.com/) documentation
+- The [`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html) package.
+- [`shiny`](http://cran.r-project.org/web/packages/shiny/) package and
+  [web page](http://shiny.rstudio.com/).

@@ -1,7 +1,7 @@
 <!--
 %\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{ReportingTools and knitr R markdown}
-%\VignetteKeywords{vignette, markdown, knitr, shiny, ReportingTools}
+%\VignetteKeywords{vignette, markdown, knitr, ReportingTools}
 %\VignettePackage{rauthoring}
 -->
 
@@ -21,6 +21,9 @@ library("ReportingTools")
 library("XML")
 ```
 
+The following code chunk, with argument `results='asis'` will produce
+the dynamic table below.
+
 ```{r, reptoolsknitr0, eval=FALSE}
 library("ReportingTools")
 library("XML")
@@ -30,7 +33,7 @@ htmlRep <- HTMLReport(shortName = "knitrReport",
 htmlRep[["mtcars"]] <- mtcars  ##this line is equivalent to the line above
 ```
 
-```{r, reptoolsknitr, results = 'asis'}
+```{r, reptoolsknitr, results = 'asis', echo=FALSE}
 library("ReportingTools")
 library("XML")
 htmlRep <- HTMLReport(shortName = "knitrReport",

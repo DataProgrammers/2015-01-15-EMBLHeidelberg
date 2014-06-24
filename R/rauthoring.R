@@ -1,5 +1,7 @@
 msg <- list(c("open the 'rauthoring' vignette:",
-              "vignettes('rauthoring', package = 'rauthoring')"),
+              "vignette('rauthoring', package = 'rauthoring')"),
+            c("open the 'knitrreptools' vignette:",
+              "vignette('knitrreptools', package = 'rauthoring')"),
              c("copy a simple template in your working directory:",
                "rmdtemplate()"),
             c("display this message:",
