@@ -5,22 +5,22 @@
 %\VignettePackage{rauthoring}
 -->
 
-Authoring document for `R`
+Authoring document for R
 ========================
 
-# `R` Markdown
+# R Markdown
 
 ## Introduction
 
 This document introduces some tools to author documents that contain
-analysis results produced with `R`. Bringing data, results and their
+analysis results produced with R. Bringing data, results and their
 interpretation is essential for assuring reproducibility of an
 analysis pipeline and the results and comprehensively communicating
 these results to your collaborators. A popular solution for this is
 *literate programming*, a technique and set of tools that permit to
 
 1. Write text and code within a single document. Here we will use the
-   simple markdown syntax and include `R` code chunks; such documents
+   simple markdown syntax and include R code chunks; such documents
    are denoted *R markdown* and have the `Rmd` extension.
 2. Extract (called *tangling*) and execute the code
 3. Replace the original code chunks by their results into the original
@@ -36,7 +36,7 @@ editors such as Rstudio.
 
 The figure below, taken from
 [the Rstudio markdown (v2) tutorial](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html)
-illstrates basic markdown syntax and its output using Rstudio.
+illustrates basic markdown syntax and its output using Rstudio.
 
 - Headers can be defined using `======` or `-----` (level 1 and 2
   respectively) or one or multiple `#` (for level 1, 2,
@@ -55,15 +55,15 @@ illstrates basic markdown syntax and its output using Rstudio.
 
 ![Markdow basics](./Figures/markdownOverview.png)
 
-## `R` code chunks
+## R code chunks
 
-To include `R` code in the R markdown file, the native code chunk
+To include R code in the R markdown file, the native code chunk
 syntax is augmented with code chunk tags inside `{r, ...}`, as
-illstrated below:
+illustrated below:
 
 ![Markdown code chunk](./Figures/markdownChunk.png)
 
-The following optinal code chunk options are available:
+The following optimal code chunk options are available:
 
 - `{r, chunkname}` the first unnamed string is used to name the code
   chunk; useful for following the code execution and debugging.
@@ -87,13 +87,12 @@ and `r`).
 
 If you are using Rstudio, the simplest way to generate your final
 output is to open your `Rmd` file and click the `Knit HTML` (or `Knit
-PDF`, ...) button. From `R`, you can use the `knit2html` function and
+PDF`, ...) button. From R, you can use the `knit2html` function and
 give the `Rmd` as input. Both options will use the `knit` function to
 *weave* the document and generate the markdown `md` file that includes
 the code outputs. The generation of the final output will depend on
-the software version you use: either `markdown::markdownToHTML` or
-`rmarkdown::render` functions.
-
+the software version you use: either `markdown::markdownToHTML` or the
+more recent `rmarkdown::render` functions. 
 
 > Exercise: Experiment with R markdown and the features described so
 > far. Either create your `Rmd` file from scratch or use the simple
@@ -101,9 +100,101 @@ the software version you use: either `markdown::markdownToHTML` or
 
 ## More markdown
 
+- Superscript^2^ using `  ^2^  ` and ~~strikethrough~~ using `  ~~strikethrough~~  `.
+
+- To use ordered lists, just preced to list items by their respective number:
+    1. first item
+    2. second item
+    3. and so on ...
+
+
+- To use links, enclose the link text in `[]` and the the actual link
+  in `()`: ` [my link](http://linkurl.com) `
+
+- To add a static figure to the document, use the link syntax and
+  precede it by `!`: ` ![image text](./fig/myfig.png) `.
+
+- Tables can easily be printed inside an R chunk
+
+```{r, table}
+head(mtcars)
+```
+
+   The most recent version of R Markdown also has a table syntax
+   described
+   [here](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#tables). Such
+   tables can be generated with the helper function
+   `knitr::kable`. Such tables are then displayed as html
+   tables. Instead of copy/pasting the output of `kabble` into the R
+   makdown document, one can specify `results='asis'` for the output
+   of the code chunk to be interpreted as is, i.e. write raw results
+   from R into the output document.
+
+```{r, table2}
+library("knitr")
+kable(head(mtcars))
+```
+
+```{r, table3, results='asis', echo=FALSE}
+library("knitr")
+kable(head(mtcars))
+```
+
+- To avoid wasting time in repeating long calculations over and over
+  again, it is possible to cache specific code chunks specifying
+  `cache=TRUE` in the chunk header.
+
+
+- The most recent release of [R mardown (version 2)]() supports many
+  more features and requires a recent version of
+  [`pandoc`](http://johnmacfarlane.net/pandoc/), the workhorse that
+  converts mardown to html and many other formats.
+
+> Try out some of these additional features in your own `Rmd` file or
+> look at this vignettes source code. Find where it is with ``
+
 # ReportingTools
 
-The Bioconductor [`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html) ...
+The Bioconductor
+[`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html)
+provides additional features to generate reports. From the
+[Bioc landing page](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html):
+
+    The ReportingTools software package enables users to easily
+	display reports of analysis results generated from sources such as
+	microarray and sequencing data. The package allows users to create
+	HTML pages that may be viewed on a web browser such as Safari, or
+	in other formats readable by programs such as Excel. Users can
+	generate tables with sortable and filterable columns, make and
+	display plots, and link table entries to other data sources such
+	as NCBI or larger plots within the HTML page. Using the package,
+	users can also produce a table of contents page to link various
+	reports together for a particular project that can be viewed in a
+	web browser. For more examples, please visit our site:
+	http://research-pub.gene.com/ReportingTools.
+
+
+For example, to create a html report that contains an interactive html table:
+
+```{r, reptools, eval=FALSE}
+library("ReportingTools")
+htmlRep <- HTMLReport(shortName = "htmltable",
+                      reportDirectory = "./reports")
+publish(mtcars, htmlRep)
+finish(htmlRep)
+browseURL("./reports/htmltable.html")
+```
+
+In particular, it seamlessly integrates with `kntir` and R markdown
+documents, as illustrated in the `knitrreptools' vignette, available
+with `vignette("knitrreptools", package = "rauthoring")`.
+
+
+See the `ReportingTools` vignettes for more details and other use cases:
+
+```{r, reptoolsvigs, eval=FALSE}
+vignette(package = "ReportingTools")
+```
 
 # Web applications with `shiny`
 
@@ -115,7 +206,7 @@ sessionInfo()
 
 # References
 
-- `knitr` and `Sweave` package
+- `[knitr](http://yihui.name/knitr/)`
 - `markdown` and `rmarkdown` packages
 - `ReportingTools`
 - `shiny`

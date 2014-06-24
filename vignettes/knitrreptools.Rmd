@@ -1,0 +1,33 @@
+ReporingTools and knitr
+========================
+
+## Introduction
+
+It is possible to include `ReportingTools` elements into `knitr` R
+markdown documents. Compiling such documents must be done with
+`knitr::knit2html` (instead of `rmarkdown::render`).
+
+## A table
+
+```{r, env, echo=FALSE, message=FALSE}
+library("ReportingTools")
+library("XML")
+```
+
+```{r, reptoolsknitr0, eval=FALSE}
+library("ReportingTools")
+library("XML")
+htmlRep <- HTMLReport(shortName = "knitrReport",
+                      handlers = knitrHandlers,
+                      reportDirectory = ".")
+htmlRep[["mtcars"]] <- mtcars  ##this line is equivalent to the line above
+```
+
+```{r, reptoolsknitr, results = 'asis'}
+library("ReportingTools")
+library("XML")
+htmlRep <- HTMLReport(shortName = "knitrReport",
+                      handlers = knitrHandlers,
+                      reportDirectory = ".")
+htmlRep[["mtcars"]] <- mtcars  ##this line is equivalent to the line above
+```
