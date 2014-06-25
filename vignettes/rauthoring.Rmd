@@ -267,7 +267,7 @@ A few useful links :
 - [`shiny` tutorial](http://shiny.rstudio.com/tutorial/)
 - List of available
 [widgets](http://shiny.rstudio.com/gallery/widgets-gallery.html).
-
+- [Application layouts](http://shiny.rstudio.com/articles/layout-guide.html)
 
 # Session information
 
