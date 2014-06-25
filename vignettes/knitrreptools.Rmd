@@ -35,7 +35,7 @@ the report file.
 library("rauthoring")
 data(res)
 ## must not be an instance of class DESeqResults
-res <- data.frame(res)[1:100, ]
+res <- data.frame(res[1:100, ])
 library("ReportingTools")
 library("XML")
 instDoc <- file.path("..", "inst", "doc")
@@ -48,7 +48,7 @@ htmlRep[["res"]] <- res
 ```{r, reptoolsknitr, results = 'asis', echo=FALSE}
 library("rauthoring")
 data(res)
-res <- data.frame(res)[1:100, ]
+res <- data.frame(res[1:100, ])
 library("ReportingTools")
 library("XML")
 instDoc <- file.path("..", "inst", "doc")

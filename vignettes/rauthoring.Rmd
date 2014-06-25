@@ -195,7 +195,7 @@ publish(res, htmlRep)
 finish(htmlRep)
 browseURL("./reports/htmltable.html")
 ```
-> Generate the above dynamic html table as shown above.
+> Generate the ReportingTools dynamic html table as shown above.
 
 In particular, it seamlessly integrates with `kntir` and R markdown
 documents, as illustrated in the
@@ -256,7 +256,7 @@ runApp("./app1")
 > and start you shiny app.
 
 
-List of availabel
+List of available
 [widgets](http://shiny.rstudio.com/gallery/widgets-gallery.html).
 
 
@@ -276,4 +276,4 @@ sessionInfo()
 - The [`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html) package.
 - [`shiny`](http://cran.r-project.org/web/packages/shiny/) package and
   [web page](http://shiny.rstudio.com/).
-- [R markdown videa](http://vimeo.com/94181521)
+- [R markdown video](http://vimeo.com/94181521)

@@ -14,7 +14,7 @@
 \usage{data(res)}
 
 \examples{
-library("DESeq")
+library("DESeq2")
 data(res)
 class(res)
 ?DESeqResults
