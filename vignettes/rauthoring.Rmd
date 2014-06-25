@@ -255,10 +255,18 @@ runApp("./app1")
 > Create the `ui.R` and `server.R` files, store them in a directory,
 > and start you shiny app.
 
+Let's try to improve our simple first app by adding. A suggestion if
+available by running the `app2()` function. The additional widgets
+added to the interface are `radioButtons`, a `numericInput` field
+(side bar) and a `verbatimTextOutput` (main panel). The server backend
+takes advantage if two new inputs to add a vertical line to the
+histogram and add a table of significant/non-significant features to
+its output.
 
-List of available
+A few useful links : 
+- [`shiny` tutorial](http://shiny.rstudio.com/tutorial/)
+- List of available
 [widgets](http://shiny.rstudio.com/gallery/widgets-gallery.html).
-
 
 
 # Session information
