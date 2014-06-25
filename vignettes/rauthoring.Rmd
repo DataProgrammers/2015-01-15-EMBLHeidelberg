@@ -117,7 +117,9 @@ more recent `rmarkdown::render` functions.
 - Tables can easily be printed inside an R chunk
 
 ```{r, table}
-head(mtcars)
+library("DESeq")
+data(DESeq2_result_table, verbose = TRUE)
+head(res)
 ```
 
    The most recent version of R Markdown also has a table syntax
@@ -132,12 +134,12 @@ head(mtcars)
 
 ```{r, table2}
 library("knitr")
-kable(head(mtcars))
+kable(head(res))
 ```
 
 ```{r, table3, results='asis', echo=FALSE}
 library("knitr")
-kable(head(mtcars))
+kable(head(res))
 ```
 
 - To avoid wasting time in repeating long calculations over and over
@@ -181,7 +183,7 @@ For example, to create a html report that contains an interactive html table:
 library("ReportingTools")
 htmlRep <- HTMLReport(shortName = "htmltable",
                       reportDirectory = "./reports")
-publish(mtcars, htmlRep)
+publish(res, htmlRep)
 finish(htmlRep)
 browseURL("./reports/htmltable.html")
 ```

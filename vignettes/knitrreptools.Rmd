@@ -35,7 +35,7 @@ instDoc <- file.path("..", "inst", "doc")
 htmlRep <- HTMLReport(shortName = "knitrReport",
                       handlers = knitrHandlers,
                       reportDirectory = instDoc)
-htmlRep[["mtcars"]] <- mtcars 
+htmlRep[["res"]] <- res
 ```
 
 ```{r, reptoolsknitr, results = 'asis', echo=FALSE}
@@ -45,7 +45,7 @@ instDoc <- file.path("..", "inst", "doc")
 htmlRep <- HTMLReport(shortName = "knitrReport",
                       handlers = knitrHandlers,
                       reportDirectory = instDoc)
-htmlRep[["mtcars"]] <- mtcars  
+htmlRep[["res"]] <- res
 ```
 
 See also `ReporterTools`'s `knitr` vignette.
