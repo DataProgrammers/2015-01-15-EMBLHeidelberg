@@ -117,8 +117,9 @@ more recent `rmarkdown::render` functions.
 - Tables can easily be printed inside an R chunk
 
 ```{r, table}
+library("rauthoring")
 library("DESeq")
-data(DESeq2_result_table, verbose = TRUE)
+data(res, verbose = TRUE)
 head(res)
 ```
 

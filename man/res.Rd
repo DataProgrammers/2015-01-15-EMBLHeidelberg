@@ -1,6 +1,5 @@
 \name{res}
 \alias{res}
-\alias{DESeq2_result_table.RData}
 
 \docType{data}
 
