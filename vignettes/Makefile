@@ -12,7 +12,8 @@ R_HOME=	$(shell R RHOME)
 endif
 
 rauthoring.html: rauthoring.Rmd
-	"$(R_HOME)/bin/R" --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
+	## "$(R_HOME)/bin/R" --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
+	/opt/Rpatched/bin/R --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
 
 
 knitrreptools.html: knitrreptools.Rmd

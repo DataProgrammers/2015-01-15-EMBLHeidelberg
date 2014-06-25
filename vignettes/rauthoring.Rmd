@@ -14,10 +14,10 @@ Authoring document for R
 
 This document introduces some tools to author documents that contain
 analysis results produced with R. Bringing data, results and their
-interpretation is essential for assuring reproducibility of an
-analysis pipeline and the results and comprehensively communicating
-these results to your collaborators. A popular solution for this is
-*literate programming*, a technique and set of tools that permit to
+interpretation is essential to assure reproducibility of an analysis
+pipeline and to comprehensively communicate these results to
+collaborators. A popular solution for this is *literate programming*,
+a technique and set of tools that permit to
 
 1. Write text and code within a single document. Here we will use the
    simple markdown syntax and include R code chunks; such documents
@@ -32,9 +32,15 @@ Steps 2 to 4 are can be executed individually or automated into a
 single command such as `knit2html` from the `knitr` package or using
 editors such as Rstudio.
 
+Other types of document and frameworks that combine a programming and
+authoring languages are Sweave and knitr files `Rnw` (combining LaTeX
+and R), [IPython](http://ipython.org/) for python and other languages,
+[orgmode](http://orgmode.org/manual/Working-With-Source-Code.html#Working-With-Source-Code),
+...
+
 ## Markdown syntax
 
-The figure below, taken from
+The figures below, taken from
 [the Rstudio markdown (v2) tutorial](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html)
 illustrates basic markdown syntax and its output using Rstudio.
 
@@ -116,10 +122,11 @@ more recent `rmarkdown::render` functions.
 
 - Tables can easily be printed inside an R chunk
 
-```{r, table}
+```{r, table, message=FALSE}
 library("rauthoring")
-library("DESeq")
-data(res, verbose = TRUE)
+library("DESeq2")
+data(res)
+class(res)
 head(res)
 ```
 
@@ -202,6 +209,58 @@ vignette(package = "ReportingTools")
 
 # Web applications with `shiny`
 
+`shiny` in an R package that allows to build interactive web
+applications from R. These apps are composed by a user interface part
+and a server backend. Here, we will save each of these in the `ui.R`
+and `server.R` files respectively. Both files are stored into a
+directory, `app1` below. Both sides continuously react to their
+respective updates, hence the term of *reactive programming*.
+
+## Server
+
+The server backend defines the server functionality through the
+`shinyServer` function, which itself takes an anyonymous function as
+input with parameters `input` and `output`. The former corresponds to
+data that stems for the user interface (see below) and the latter
+defines the server output that will be available to the interface.
+
+```{r, echo=FALSE, comment = ""}
+writeLines(readLines(system.file("extdata/app1/server.R", package = "rauthoring")))
+```
+
+## Interface
+
+The interface is handled by the `shinyUI` function that draws the
+interface
+[layout](http://shiny.rstudio.com/articles/layout-guide.html). Below,
+we create a `fluidPage` layout composed by a title and a side bar
+layout. The latter contains a side bar and a main panel. The side bar
+get a slider input widget with ranges from 10 to 100 and default value
+50 - the value will be available in the server input as
+`input$breaks`. The main panel is composed by a plot renderer that
+display the value `"hist"`, that is returned by the server backend.
+
+```{r, echo=FALSE, comment = ""}
+writeLines(readLines(system.file("extdata/app1/ui.R", package = "rauthoring")))
+```
+
+
+To start this application use the `runApp` function with the name of
+the directory contain the server and interface definitions. 
+
+```{r, eval=FALSE}
+runApp("./app1")
+```
+
+> Create the `ui.R` and `server.R` files, store them in a directory,
+> and start you shiny app.
+
+
+List of availabel
+[widgets](http://shiny.rstudio.com/gallery/widgets-gallery.html).
+
+
+
 # Session information
 
 ```{r, echo=FALSE}
@@ -217,3 +276,4 @@ sessionInfo()
 - The [`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html) package.
 - [`shiny`](http://cran.r-project.org/web/packages/shiny/) package and
   [web page](http://shiny.rstudio.com/).
+- [R markdown videa](http://vimeo.com/94181521)

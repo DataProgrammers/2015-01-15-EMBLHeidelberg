@@ -8,5 +8,5 @@ Description: An introduction to literate programming and reproducible
 	     packages.
 VignetteBuilder: knitr
 Imports: utils
-Suggests: knitr, rmarkdown, markdown, ReportingTools, DESeq
+Suggests: knitr, rmarkdown, markdown, ReportingTools, DESeq2
 License: GPL-3
