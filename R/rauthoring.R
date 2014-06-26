@@ -1,11 +1,11 @@
-msg <- list(c("open the 'rauthoring' vignette:",
-              "vignette('rauthoring', package = 'rauthoring')"),
-            c("open the 'knitrreptools' vignette:",
-              "vignette('knitrreptools', package = 'rauthoring')"),
-             c("copy a simple template in your working directory:",
-               "rmdtemplate()"),
-            c("display this message:",
-              "rauthoring()"))
+## msg <- list(c("open the 'rauthoring' vignette:",
+##               "vignette('rauthoring', package = 'rauthoring')"),
+##             c("open the 'knitrreptools' vignette:",
+##               "vignette('knitrreptools', package = 'rauthoring')"),
+##              c("copy a simple template in your working directory:",
+##                "rmdtemplate()"),
+##             c("display this message:",
+##               "rauthoring()"))
 
 ##' Copies a simple R markdown template file in your working directory.
 ##'
@@ -30,6 +30,5 @@ rmdtemplate <- function(to = getwd(), ...) {
 rauthoring <- function() {
     v <- packageVersion("rauthoring")
     cat(paste0("Getting started with 'rauthoring' version ",v , ":\n"))
-    for (i in 1:length(msg))
-        cat("To", msg[[i]][1], "\n ", msg[[i]][2], "\n")
+    cat("  'help(package = \"rauthoring\", help_type = \"html\")'\n")
 }
