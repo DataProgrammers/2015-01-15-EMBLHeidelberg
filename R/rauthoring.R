@@ -16,7 +16,7 @@
 ##' \code{file.copy}.
 ##' @author Laurent Gatto
 rmdtemplate <- function(to = getwd(), ...) {
-    from <- system.file("extdata/rmdtemplate.Rmd", package = "rauthoring")
+    from <- system.file("extdata/simple.Rmd", package = "rauthoring")
     file.copy(from, to, ...)    
 }
 

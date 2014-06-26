@@ -8,14 +8,17 @@
 Authoring document for R
 ========================
 
-# R Markdown
+```{r, env, echo=FALSE, message=FALSE}
+library("rauthoring")
+library("DESeq2")
+```
 
-## Introduction
+# Introduction
 
-This document introduces some tools to author documents that contain
-analysis results produced with R. Bringing data, results and their
-interpretation is essential to assure reproducibility of an analysis
-pipeline and to comprehensively communicate these results to
+This first section introduces some tools to author documents that
+contain analysis results produced with R. Bringing data, results and
+their interpretation is essential to assure reproducibility of an
+analysis pipeline and to comprehensively communicate these results to
 collaborators. A popular solution for this is *literate programming*,
 a technique and set of tools that permit to
 
@@ -37,6 +40,24 @@ authoring languages are Sweave and knitr files `Rnw` (combining LaTeX
 and R), [IPython](http://ipython.org/) for python and other languages,
 [orgmode](http://orgmode.org/manual/Working-With-Source-Code.html#Working-With-Source-Code),
 ...
+
+The second section introduces the
+[`ReportingTools`](http://www.bioconductor.org/packages/release/bioc/html/ReportingTools.html)
+package, in particular generation of interactive tables.
+
+The last part very briefly presents the
+[`shiny`](http://cran.r-project.org/web/packages/shiny/) package by
+describing a simple application and suggesting a few ways to improve
+it.
+
+The test data used throughout this document is a `DESeq2` result, available with
+
+```{r, data}
+library("rauthoring")
+data(res)
+```
+
+# R Markdown
 
 ## Markdown syntax
 
@@ -285,3 +306,4 @@ sessionInfo()
 - [`shiny`](http://cran.r-project.org/web/packages/shiny/) package and
   [web page](http://shiny.rstudio.com/).
 - [R markdown video](http://vimeo.com/94181521)
+- [`rauthoring` public repository](https://github.com/lgatto/rauthoring)
