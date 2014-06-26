@@ -12,13 +12,11 @@ R_HOME=	$(shell R RHOME)
 endif
 
 rauthoring.html: rauthoring.Rmd
-	## "$(R_HOME)/bin/R" --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
-	/opt/Rpatched/bin/R --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
+	"$(R_HOME)/bin/R" --vanilla -e "library(rmarkdown); render('rauthoring.Rmd', 'html_document')"
 
 
 knitrreptools.html: knitrreptools.Rmd
-	## "$(R_HOME)/bin/R" --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
-	/opt/Rpatched/bin/R --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
+	"$(R_HOME)/bin/R" --vanilla -e "library(knitr); knit2html('knitrreptools.Rmd')"
 
 clean: 
 	rm -f *~
