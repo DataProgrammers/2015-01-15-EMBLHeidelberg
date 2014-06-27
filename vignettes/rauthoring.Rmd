@@ -55,6 +55,8 @@ The test data used throughout this document is a `DESeq2` result, available with
 ```{r, data}
 library("rauthoring")
 data(res)
+head(res)
+class(res)
 ```
 
 # R Markdown
@@ -141,14 +143,18 @@ more recent `rmarkdown::render` functions.
 - To add a static figure to the document, use the link syntax and
   precede it by `!`: ` ![image text](./fig/myfig.png) `.
 
-- Tables can easily be printed inside an R chunk
+- Tables can easily be printed inside an R chunk. Below, we explicitly
+  convert `res` to a `data.frame`. Although the next code chunk would
+  also work, not every function to display a table would accept a
+  specific class such as `DESeqResults`.
 
 ```{r, table, message=FALSE}
 library("rauthoring")
 library("DESeq2")
 data(res)
-class(res)
 head(res)
+class(res)
+res <- data.frame(res)
 ```
 
    The most recent version of R Markdown also has a table syntax
@@ -216,6 +222,10 @@ publish(res, htmlRep)
 finish(htmlRep)
 browseURL("./reports/htmltable.html")
 ```
+
+Note that the code above requires a `data.frame` and would not work
+with `DESeqResults`.
+
 > Generate the ReportingTools dynamic html table as shown above.
 
 In particular, it seamlessly integrates with `knitr` and R markdown
