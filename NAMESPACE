@@ -2,4 +2,5 @@ importFrom(utils, packageVersion)
 import(shiny)
 
 export(rauthoring,
+       app1, app2,
        rmdtemplate)

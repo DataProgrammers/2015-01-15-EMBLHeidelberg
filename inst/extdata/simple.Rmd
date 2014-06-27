@@ -20,8 +20,9 @@ cat(x)
 With figures...
 
 ```{r, myfig}
-dfr <- data.frame(rnorm(100), rnorm(1000))
+dfr <- data.frame(x=rnorm(100), y=rnorm(1000))
 plot(dfr$x, dfr$y, main = "Scatter plot")
+library("ggplot2")
 qplot(x, y, data = dfr)
 ```
 
