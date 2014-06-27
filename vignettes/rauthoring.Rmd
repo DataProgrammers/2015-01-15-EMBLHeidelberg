@@ -129,7 +129,7 @@ more recent `rmarkdown::render` functions.
 
 - Superscript^2^ using `  ^2^  ` and ~~strikethrough~~ using `  ~~strikethrough~~  `.
 
-- To use ordered lists, just preced to list items by their respective number:
+- To use ordered lists, just precede to list items by their respective number:
     1. first item
     2. second item
     3. and so on ...
@@ -157,7 +157,7 @@ head(res)
    tables can be generated with the helper function
    `knitr::kable`. Such tables are then displayed as html
    tables. Instead of copy/pasting the output of `kabble` into the R
-   makdown document, one can specify `results='asis'` for the output
+   markdown document, one can specify `results='asis'` for the output
    of the code chunk to be interpreted as is, i.e. write raw results
    from R into the output document.
 
@@ -176,10 +176,10 @@ kable(head(res))
   `cache=TRUE` in the chunk header.
 
 
-- The most recent release of [R mardown (version 2)]() supports many
+- The most recent release of [R markdown (version 2)]() supports many
   more features and requires a recent version of
   [`pandoc`](http://johnmacfarlane.net/pandoc/), the workhorse that
-  converts mardown to html and many other formats.
+  converts markdown to html and many other formats.
 
 > Try out some of these additional features in your own `Rmd` file or
 > look at this vignettes source code. Find where it is with
@@ -218,7 +218,7 @@ browseURL("./reports/htmltable.html")
 ```
 > Generate the ReportingTools dynamic html table as shown above.
 
-In particular, it seamlessly integrates with `kntir` and R markdown
+In particular, it seamlessly integrates with `knitr` and R markdown
 documents, as illustrated in the
 [`knitrreptools` vignette](./knitrreptools.html). 
 
@@ -230,17 +230,17 @@ vignette(package = "ReportingTools")
 
 # Web applications with `shiny`
 
-`shiny` in an R package that allows to build interactive web
-applications from R. These apps are composed by a user interface part
-and a server backend. Here, we will save each of these in the `ui.R`
-and `server.R` files respectively. Both files are stored into a
-directory, `app1` below. Both sides continuously react to their
-respective updates, hence the term of *reactive programming*.
+`shiny` is an R package that allows to build interactive web
+applications from R. These apps are composed of a user interface part
+and a server back end. These are saved in the `ui.R` and `server.R`
+files respectively. Both files are stored in a directory, `app1`
+below. Both sides continuously react to their respective updates,
+hence the term of *reactive programming*.
 
 ## Server
 
-The server backend defines the server functionality through the
-`shinyServer` function, which itself takes an anyonymous function as
+The server back end defines the server functionality through the
+`shinyServer` function, which itself takes an anonymous function as
 input with parameters `input` and `output`. The former corresponds to
 data that stems for the user interface (see below) and the latter
 defines the server output that will be available to the interface.
@@ -259,7 +259,7 @@ layout. The latter contains a side bar and a main panel. The side bar
 get a slider input widget with ranges from 10 to 100 and default value
 50 - the value will be available in the server input as
 `input$breaks`. The main panel is composed by a plot renderer that
-display the value `"hist"`, that is returned by the server backend.
+display the value `"hist"`, that is returned by the server back end.
 
 ```{r, echo=FALSE, comment = ""}
 writeLines(readLines(system.file("extdata/app1/ui.R", package = "rauthoring")))
@@ -267,7 +267,7 @@ writeLines(readLines(system.file("extdata/app1/ui.R", package = "rauthoring")))
 
 
 To start this application use the `runApp` function with the name of
-the directory contain the server and interface definitions. 
+the directory containing the server and interface definitions. 
 
 ```{r, eval=FALSE}
 runApp("./app1")
@@ -276,13 +276,12 @@ runApp("./app1")
 > Create the `ui.R` and `server.R` files, store them in a directory,
 > and start you shiny app.
 
-Let's try to improve our simple first app by adding. A suggestion if
-available by running the `app2()` function. The additional widgets
-added to the interface are `radioButtons`, a `numericInput` field
-(side bar) and a `verbatimTextOutput` (main panel). The server backend
-takes advantage if two new inputs to add a vertical line to the
-histogram and add a table of significant/non-significant features to
-its output.
+Let's try to improve our simple first app. A suggestion is available
+by running the `app2()` function. The additional widgets added to the
+interface are `radioButtons`, a `numericInput` field (side bar) and a
+`verbatimTextOutput` (main panel). The server back end takes advantage
+of two new inputs to add a vertical line to the histogram and displays
+a table of significant/non-significant features.
 
 A few useful links : 
 - [`shiny` tutorial](http://shiny.rstudio.com/tutorial/)
