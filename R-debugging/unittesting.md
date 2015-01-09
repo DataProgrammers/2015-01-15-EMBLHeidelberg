@@ -5,7 +5,10 @@ These exercises were written by Martin Morgan and Laurent Gatto for a
 
 **Why unit testing?**
 
-
+- Writing code to test code;
+- anticipate bugs, in particular for edge cases;
+- anticipate disruptive updates;
+- document and test observed bugs using specific tests.
 
 Each section provides a function that supposedly works as expected,
 but quickly proves to misbehave. The exercise aims at first writing
@@ -13,7 +16,6 @@ some dedicated testing functions that will identify the problems and
 then update the function so that it passes the specific tests. This
 practice is called unit testing and we use the RUnit package for
 this.
-
 
 See the
 [Unit Testing How-To](http://bioconductor.org/developers/how-to/unitTesting-guidelines/)
@@ -47,7 +49,7 @@ isIn(x, LETTERS)
 ```
 
 ```
-## [1] "K" "B" "G" "O" "H"
+## [1] "G" "R" "N" "H" "A"
 ```
 But
 
@@ -58,7 +60,7 @@ isIn(c(x, "a"), LETTERS)
 ```
 
 ```
-## [1] "K" "B" "G" "O" "H" NA
+## [1] "G" "R" "N" "H" "A" NA
 ```
 
 ### Solution
@@ -267,11 +269,11 @@ y <- rnorm(5)
 
 ```
 ##                x          y
-## [1,] -0.08520362  2.2989204
-## [2,]  1.38957113  0.5328303
-## [3,] -0.35289264 -2.2885943
-## [4,] -0.27475472  0.1742110
-## [5,]  0.54974997  1.4169089
+## [1,] -0.08866721 -0.1689596
+## [2,] -0.56628485 -0.3466350
+## [3,]  0.60314345 -1.5913059
+## [4,]  1.19967540  0.2114289
+## [5,]  2.12492564 -0.4756302
 ```
 
 ```r
@@ -280,7 +282,7 @@ y <- rnorm(5)
 
 ```
 ##           x           y 
-## -0.08520362  2.29892037
+## -0.08866721 -0.16895957
 ```
 
 ```r
@@ -288,7 +290,7 @@ distances(p, m)
 ```
 
 ```
-## [1] 0.000000 2.300877 4.595318 2.133148 1.086789
+## [1] 0.0000000 0.5095951 1.5816672 1.3433250 2.2347349
 ```
 
 ```r
@@ -298,11 +300,11 @@ distances(p, m)
 
 ```
 ##             x          y
-## 1 -0.08520362  2.2989204
-## 2  1.38957113  0.5328303
-## 3 -0.35289264 -2.2885943
-## 4 -0.27475472  0.1742110
-## 5  0.54974997  1.4169089
+## 1 -0.08866721 -0.1689596
+## 2 -0.56628485 -0.3466350
+## 3  0.60314345 -1.5913059
+## 4  1.19967540  0.2114289
+## 5  2.12492564 -0.4756302
 ```
 
 ```r
@@ -310,8 +312,8 @@ distances(p, m)
 ```
 
 ```
-##             x       y
-## 1 -0.08520362 2.29892
+##             x          y
+## 1 -0.08866721 -0.1689596
 ```
 
 ```r

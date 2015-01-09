@@ -5,7 +5,10 @@ These exercises were written by Martin Morgan and Laurent Gatto for a
 
 **Why unit testing?**
 
-
+- Writing code to test code;
+- anticipate bugs, in particular for edge cases;
+- anticipate disruptive updates;
+- document and test observed bugs using specific tests.
 
 Each section provides a function that supposedly works as expected,
 but quickly proves to misbehave. The exercise aims at first writing
@@ -13,7 +16,6 @@ some dedicated testing functions that will identify the problems and
 then update the function so that it passes the specific tests. This
 practice is called unit testing and we use the RUnit package for
 this.
-
 
 See the
 [Unit Testing How-To](http://bioconductor.org/developers/how-to/unitTesting-guidelines/)
