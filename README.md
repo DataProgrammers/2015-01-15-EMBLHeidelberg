@@ -4,19 +4,19 @@
 - [Course Details](http://www.dataprogrammers.net/embl_jan2015/)
 
 
-*  Day 1
+#  Day 1
 
-
+|---------------|------------------------------------------------|-----|
 |               | Setup and welcome                                        | LG |
-| 09:15 - 10:30 | [./roo/roo.pdf](OO Introduction)                         | RS |
+| 09:15 - 10:30 | [OO Introduction](./roo/roo.pdf)                         | RS |
 |               | Break                                                    |    |
-| 11:00 - 12:30 | [./roo/roo.pdf](S3/S4 object-oriented programming)       | RS |
+| 11:00 - 12:30 | [S3/S4 object-oriented programming](./roo/roo.pdf)       | RS |
 |               | Lunch                                                    |    |
-| 13:30 - 15:30 | [./RPackageDevelopment/rpd.pdf](Package development)     | RS |
+| 13:30 - 15:30 | [Package development](./RPackageDevelopment/rpd.pdf)     | RS |
 |               | Break                                                    |    |
 | 16:00 - 17:30 | Advanced issues in package development and documentation | RS |
 	
-
+|---------------|------------------------------------------------|-----|
 | 09:15 - 10:30 | Unit testing and debugging                                | LG |
 |               | Break                                                     |    |
 | 11:00 - 12:30 | Profiling and calling C/C++ code                          | LG |
