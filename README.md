@@ -49,7 +49,13 @@ If you do not have any favourite editor, have a go with
 |               | Lunch                                                     |    |
 | 13:30 - 15:30 | [Vectorisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-vectorisation/vectorisation.pdf), [functional programming](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-functional-programming/functional-programming.pdf) and [parallelisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-parallel/parallel.pdf) ([src](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/tree/master/R-parallel/src))| LG |
 |               | Break                                                     |    |
-| 16:00 - 17:30 | Building web interfaces: shiny                            | LG |
+| 16:00 - 17:30 | R authoring and building web interfaces: shiny
+
+```r
+library("devtools")
+install_github("lgatto/rauthoring")
+```
+| LG |
 |               | Wrap up                                                   | all |
 
 
