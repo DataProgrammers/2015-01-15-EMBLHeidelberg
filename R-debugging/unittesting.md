@@ -1,20 +1,29 @@
-These exercises were written by Martin Morgan and Laurent Gatto to be
-used during
-[Bioconductor Developer Day workshop](http://bioconductor.org/help/course-materials/2013/BioC2013/developer-day-debug/)
-activities.
+These exercises were written by Martin Morgan and Laurent Gatto for a
+[Bioconductor Developer Day workshop](http://bioconductor.org/help/course-materials/2013/BioC2013/developer-day-debug/).
 
 # Introduction
 
 **Why unit testing?**
+
+
 
 Each section provides a function that supposedly works as expected,
 but quickly proves to misbehave. The exercise aims at first writing
 some dedicated testing functions that will identify the problems and
 then update the function so that it passes the specific tests. This
 practice is called unit testing and we use the RUnit package for
-this. See the
+this.
+
+
+See the
 [Unit Testing How-To](http://bioconductor.org/developers/how-to/unitTesting-guidelines/)
-guide for details on unit testing using RUnit.
+guide for details on unit testing using the
+[`RUnit`](http://cran.r-project.org/web/packages/RUnit/index.html)
+package. The
+[`testthat`](http://cran.r-project.org/web/packages/testthat/) is
+another package that provides unit testing infrastructure. Both
+packages can conveniently be used to automate unit testing within
+package testing. 
 
 # Example
 
@@ -38,7 +47,7 @@ isIn(x, LETTERS)
 ```
 
 ```
-## [1] "H" "B" "X" "O" "U"
+## [1] "K" "B" "G" "O" "H"
 ```
 But
 
@@ -49,7 +58,7 @@ isIn(c(x, "a"), LETTERS)
 ```
 
 ```
-## [1] "H" "B" "X" "O" "U" NA
+## [1] "K" "B" "G" "O" "H" NA
 ```
 
 ### Solution
@@ -136,34 +145,23 @@ isExactIn(c("a", "z"), c("abc", letters))
 
 ### Solution
 
+<!-- ```{r} -->
+<!-- ## Unit test: -->
+<!-- library("RUnit") -->
+<!-- test_isExactIn <- function() { -->
+<!--     checkIdentical("a", isExactIn("a", letters)) -->
+<!--     checkIdentical("a", isExactIn("a", c("abc", letters))) -->
+<!--     checkIdentical(c("a", "z"), isExactIn(c("a", "z"), c("abc", letters))) -->
+<!-- } -->
 
-```r
-## Unit test:
-library("RUnit")
-test_isExactIn <- function() {
-    checkIdentical("a", isExactIn("a", letters))
-    checkIdentical("a", isExactIn("a", c("abc", letters)))
-    checkIdentical(c("a", "z"), isExactIn(c("a", "z"), c("abc", letters)))
-}
+<!-- test_isExactIn() -->
 
-test_isExactIn()
-```
+<!-- ## updated function: -->
+<!-- isExactIn <- function(x, y) -->
+<!--     x[x %in% y] -->
 
-```
-## Error in checkIdentical("a", isExactIn("a", c("abc", letters))): FALSE
-```
-
-```r
-## updated function:
-isExactIn <- function(x, y)
-    x[x %in% y]
-
-test_isExactIn()
-```
-
-```
-## [1] TRUE
-```
+<!-- test_isExactIn() -->
+<!-- ``` -->
 
 ## If conditions with length > 1
 
@@ -223,40 +221,24 @@ ifcond(3:1, c(2, 2, 2))
 
 ### Solution
 
+<!-- ```{r} -->
+<!-- ## Unit test: -->
+<!-- library("RUnit") -->
+<!-- test_ifcond <- function() { -->
+<!--     checkIdentical(5, ifcond(3, 2)) -->
+<!--     checkIdentical(8, ifcond(2, 2)) -->
+<!--     checkIdentical(5, ifcond(1, 2)) -->
+<!--     checkIdentical(c(5, 8, 5), ifcond(3:1, c(2, 2, 2))) -->
+<!-- } -->
 
-```r
-## Unit test:
-library("RUnit")
-test_ifcond <- function() {
-    checkIdentical(5, ifcond(3, 2))
-    checkIdentical(8, ifcond(2, 2))
-    checkIdentical(5, ifcond(1, 2))
-    checkIdentical(c(5, 8, 5), ifcond(3:1, c(2, 2, 2)))
-}
+<!-- test_ifcond() -->
 
-test_ifcond()
-```
+<!-- ## updated function: -->
+<!-- ifcond <- function(x, y) -->
+<!--     ifelse(x > y, x*x - y*y, x*x + y*y) -->
 
-```
-## Warning in if (x > y) {: the condition has length > 1 and only the first
-## element will be used
-```
-
-```
-## Error in checkIdentical(c(5, 8, 5), ifcond(3:1, c(2, 2, 2))): FALSE
-```
-
-```r
-## updated function:
-ifcond <- function(x, y)
-    ifelse(x > y, x*x - y*y, x*x + y*y)
-
-test_ifcond()
-```
-
-```
-## [1] TRUE
-```
+<!-- test_ifcond() -->
+<!-- ``` -->
 
 ## Know your inputs
 
@@ -284,12 +266,12 @@ y <- rnorm(5)
 ```
 
 ```
-##               x          y
-## [1,]  1.6673042  1.2842107
-## [2,] -0.5467649 -0.4497845
-## [3,] -1.3180999 -2.1142925
-## [4,] -1.5011728 -1.8925988
-## [5,] -1.1112144  0.1311542
+##                x          y
+## [1,] -0.08520362  2.2989204
+## [2,]  1.38957113  0.5328303
+## [3,] -0.35289264 -2.2885943
+## [4,] -0.27475472  0.1742110
+## [5,]  0.54974997  1.4169089
 ```
 
 ```r
@@ -297,8 +279,8 @@ y <- rnorm(5)
 ```
 
 ```
-##        x        y 
-## 1.667304 1.284211
+##           x           y 
+## -0.08520362  2.29892037
 ```
 
 ```r
@@ -306,7 +288,7 @@ distances(p, m)
 ```
 
 ```
-## [1] 0.000000 2.812266 4.523545 4.486799 3.008273
+## [1] 0.000000 2.300877 4.595318 2.133148 1.086789
 ```
 
 ```r
@@ -315,12 +297,12 @@ distances(p, m)
 ```
 
 ```
-##            x          y
-## 1  1.6673042  1.2842107
-## 2 -0.5467649 -0.4497845
-## 3 -1.3180999 -2.1142925
-## 4 -1.5011728 -1.8925988
-## 5 -1.1112144  0.1311542
+##             x          y
+## 1 -0.08520362  2.2989204
+## 2  1.38957113  0.5328303
+## 3 -0.35289264 -2.2885943
+## 4 -0.27475472  0.1742110
+## 5  0.54974997  1.4169089
 ```
 
 ```r
@@ -328,8 +310,8 @@ distances(p, m)
 ```
 
 ```
-##          x        y
-## 1 1.667304 1.284211
+##             x       y
+## 1 -0.08520362 2.29892
 ```
 
 ```r
@@ -343,46 +325,35 @@ distances(q, dd)
 
 ### Solution
 
+<!-- ```{r} -->
+<!-- ## Unit test: -->
+<!-- library("RUnit") -->
+<!-- test_distances <- function() { -->
+<!--     x <- y <- c(0, 1, 2) -->
+<!--     m <- cbind(x, y) -->
+<!--     p <- m[1, ] -->
+<!--     dd <- data.frame(x, y) -->
+<!--     q <- dd[1, ] -->
+<!--     expct <- c(0, sqrt(c(2, 8))) -->
+<!--     checkIdentical(expct, distances(p, m)) -->
+<!--     checkIdentical(expct, distances(q, dd)) -->
+<!-- } -->
 
-```r
-## Unit test:
-library("RUnit")
-test_distances <- function() {
-    x <- y <- c(0, 1, 2)
-    m <- cbind(x, y)
-    p <- m[1, ]
-    dd <- data.frame(x, y)
-    q <- dd[1, ]
-    expct <- c(0, sqrt(c(2, 8)))
-    checkIdentical(expct, distances(p, m))
-    checkIdentical(expct, distances(q, dd))
-}
+<!-- test_distances() -->
 
-test_distances()
-```
+<!-- ## updated function -->
+<!-- distances <- function(point, pointVec) { -->
+<!--     point <- as.numeric(point) -->
+<!--     x <- point[1] -->
+<!--     y <- point[2] -->
+<!--     xVec <- pointVec[,1] -->
+<!--     yVec <- pointVec[,2] -->
+<!--     dist <- sqrt((xVec - x)^2 + (yVec - y)^2) -->
+<!--     return(dist) -->
+<!-- } -->
 
-```
-## Error in checkIdentical(expct, distances(q, dd)): FALSE
-```
-
-```r
-## updated function
-distances <- function(point, pointVec) {
-    point <- as.numeric(point)
-    x <- point[1]
-    y <- point[2]
-    xVec <- pointVec[,1]
-    yVec <- pointVec[,2]
-    dist <- sqrt((xVec - x)^2 + (yVec - y)^2)
-    return(dist)
-}
-
-test_distances()
-```
-
-```
-## [1] TRUE
-```
+<!-- test_distances() -->
+<!-- ``` -->
 
 ## Iterate on 0 length
 
@@ -420,43 +391,120 @@ sqrtabs(numeric())
 
 ### Solution
 
+<!-- ```{r} -->
+<!-- ## Unit test: -->
+<!-- library(RUnit) -->
+<!-- test_sqrtabs <- function() { -->
+<!--     checkIdentical(c(2, 0, 2), sqrtabs(c(-4, 0, 4))) -->
+<!--     checkIdentical(numeric(), sqrtabs(numeric())) -->
+<!-- } -->
+<!-- test_sqrtabs() -->
+
+<!-- ## updated function: -->
+<!-- sqrtabs <- function(x) { -->
+<!--   v <- abs(x) -->
+<!--   sapply(seq_along(v), function(i) sqrt(v[i])) -->
+<!-- } -->
+<!-- test_sqrtabs()                          # nope! -->
+
+<!-- sqrtabs <- function(x) { -->
+<!--   v <- abs(x) -->
+<!--   vapply(seq_along(v), function(i) sqrt(v[i]), 0) -->
+<!-- } -->
+<!-- test_sqrtabs()                          # yes! -->
+<!-- ``` -->
+
+# Unit testing in a package 
+
+## The `testthat` syntax
+
+`expect_that(object_or_expression, condition)` with conditions
+- equals: `expect_that(1+2,equals(3))` or `expect_equal(1+2,3)`
+- gives warning: `expect_that(warning("a")`, `gives_warning())`
+- is a: `expect_that(1, is_a("numeric"))` or `expect_is(1,"numeric")`
+- is true: `expect_that(2 == 2, is_true())` or `expect_true(2==2)`
+- matches: `expect_that("Testing is fun", matches("fun"))` or `expect_match("Testing is fun", "f.n")`
+- takes less: `than expect_that(Sys.sleep(1), takes_less_than(3))`
+
+and
 
 ```r
-## Unit test:
-library(RUnit)
-test_sqrtabs <- function() {
-    checkIdentical(c(2, 0, 2), sqrtabs(c(-4, 0, 4)))
-    checkIdentical(numeric(), sqrtabs(numeric()))
-}
-test_sqrtabs()
+test_that("description", {
+    a <- foo()
+    b <- bar()
+    expect_equal(a, b)
+})
 ```
 
-```
-## Error in checkIdentical(numeric(), sqrtabs(numeric())): FALSE
-```
+## Interactive unit testing
 
 ```r
-## updated function:
-sqrtabs <- function(x) {
-  v <- abs(x)
-  sapply(seq_along(v), function(i) sqrt(v[i]))
-}
-test_sqrtabs()                          # nope!
+library("testthat")
+test_dir("./unittests/")
+test_file("./unittests/test_foo.R")
 ```
 
-```
-## Error in checkIdentical(numeric(), sqrtabs(numeric())): FALSE
-```
+## In a package
+
+1. Create a directory `./mypackage/tests`.
+2. Create the `testthat.R` file
 
 ```r
-sqrtabs <- function(x) {
-  v <- abs(x)
-  vapply(seq_along(v), function(i) sqrt(v[i]), 0)
-}
-test_sqrtabs()                          # yes!
+library("testthat")
+library("mypackage")
+test_check("sequences")
 ```
 
+3. Create a sub-directory `./mypackage/tests/testthat` and include as
+   many unit test files as desired that are named with the `test_`
+   prefix and contain unit tests.
+
+4. Suggest the unit testing package in your `DESCRIPTION` file:
+
 ```
-## [1] TRUE
+Suggests: testthat
 ```
 
+## Example from the `sequences` package
+
+From the `./sequences/tests/testthat/test_sequences.R` file:
+
+### Object creation and validity
+
+We have a fasta file and the corresponding `DnaSeq` object.
+
+1. Let's make sure that the `DnaSeq` instance is valid, as changes in
+   the class definition might have altered its validity.
+
+2. Let's verify that `readFasta` regenerates and identical `DnaSeq`
+   object given the original fasta file.
+
+```r
+test_that("dnaseq validity", {
+  data(dnaseq)
+  expect_true(validObject(dnaseq))
+})
+
+test_that("readFasta", {
+  ## loading _valid_ dnaseq
+  data(dnaseq)
+  ## reading fasta sequence
+  f <- dir(system.file("extdata",package="sequences"),pattern="fasta",full.names=TRUE)
+  xx <- readFasta(f[1])
+  expect_true(all.equal(xx, dnaseq))
+})
+```
+
+### Multiple implementations
+
+Let's check that the R, C and C++ (via `Rcpp`) give the same result
+
+```r
+test_that("ccpp code", {
+  gccountr <-
+    function(x) tabulate(factor(strsplit(x, "")[[1]]))
+  x <- "AACGACTACAGCATACTAC"
+  expect_true(identical(gccount(x), gccountr(x)))
+  expect_true(identical(gccount2(x), gccountr(x)))
+})
+```
