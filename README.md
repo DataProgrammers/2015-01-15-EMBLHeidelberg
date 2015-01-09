@@ -8,11 +8,11 @@
 
 
 |               | Setup and welcome                                        | LG |
-| 09:15 - 10:30 | Introduction                                             | RS |
+| 09:15 - 10:30 | [./roo/roo.pdf](OO Introduction)                         | RS |
 |               | Break                                                    |    |
-| 11:00 - 12:30 | S3/S4 object-oriented programming                        | RS |
+| 11:00 - 12:30 | [./roo/roo.pdf](S3/S4 object-oriented programming)       | RS |
 |               | Lunch                                                    |    |
-| 13:30 - 15:30 | Package development                                      | RS |
+| 13:30 - 15:30 | [./RPackageDevelopment/rpd.pdf](Package development)     | RS |
 |               | Break                                                    |    |
 | 16:00 - 17:30 | Advanced issues in package development and documentation | RS |
 	
