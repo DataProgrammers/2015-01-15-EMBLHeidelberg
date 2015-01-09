@@ -1,2 +1,6 @@
-# 2015-01-15-EMBLHeidelberg
- R programming and development (EMBL, Jan 2015) 
+# Advanced Course: R programming and development
+
+- EMBL Heidelberg, 15 - 16 Jan 2015
+- [Course Details](http://www.dataprogrammers.net/embl_jan2015/)
+
+
