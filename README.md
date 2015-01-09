@@ -6,6 +6,7 @@
 
 #  Day 1
 
+| When          | What                                           |     |
 |---------------|------------------------------------------------|-----|
 |               | Setup and welcome                                        | LG |
 | 09:15 - 10:30 | [OO Introduction](./roo/roo.pdf)                         | RS |
@@ -15,7 +16,8 @@
 | 13:30 - 15:30 | [Package development](./RPackageDevelopment/rpd.pdf)     | RS |
 |               | Break                                                    |    |
 | 16:00 - 17:30 | Advanced issues in package development and documentation | RS |
-	
+
+| When          | What                                           |     |
 |---------------|------------------------------------------------|-----|
 | 09:15 - 10:30 | Unit testing and debugging                                | LG |
 |               | Break                                                     |    |
