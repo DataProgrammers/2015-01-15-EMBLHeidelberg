@@ -4,3 +4,24 @@
 - [Course Details](http://www.dataprogrammers.net/embl_jan2015/)
 
 
+*  Day 1
+
+
+|               | Setup and welcome                                        | LG |
+| 09:15 - 10:30 | Introduction                                             | RS |
+|               | Break                                                    |    |
+| 11:00 - 12:30 | S3/S4 object-oriented programming                        | RS |
+|               | Lunch                                                    |    |
+| 13:30 - 15:30 | Package development                                      | RS |
+|               | Break                                                    |    |
+| 16:00 - 17:30 | Advanced issues in package development and documentation | RS |
+	
+
+| 09:15 - 10:30 | Unit testing and debugging                                | LG |
+|               | Break                                                     |    |
+| 11:00 - 12:30 | Profiling and calling C/C++ code                          | LG |
+|               | Lunch                                                     |    |
+| 13:30 - 15:30 | Vectorisation, functional programming and parallelisation | LG |
+|               | Break                                                     |    |
+| 16:00 - 17:30 | Building web interfaces: shiny                            | LG |
+|               | Wrap up                                                   |    |
