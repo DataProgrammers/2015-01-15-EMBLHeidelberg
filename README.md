@@ -45,7 +45,7 @@ If you do not have any favourite editor, have a go with
 |---------------|------------------------------------------------|-----|
 | 09:15 - 10:30 | [Testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/testing.md), [Unit testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/unittesting.md) and [debugging](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-debugging/debugging.pdf)  | LG |
 |               | Break                                                     |    |
-| 11:00 - 12:30 | [Profiling] and calling [C/C++ code]                      | LG |
+| 11:00 - 12:30 | [Benchmarking, profiling and optimisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-bmark-prof-optim/bmark-prof-optim.md) and calling [C/C++ code](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/rccpp/rc.md) | LG |
 |               | Lunch                                                     |    |
 | 13:30 - 15:30 | Vectorisation, functional programming and parallelisation | LG |
 |               | Break                                                     |    |
