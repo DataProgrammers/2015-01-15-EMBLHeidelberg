@@ -50,7 +50,7 @@ If you do not have any favourite editor, have a go with
 | 13:30 - 15:30 | Vectorisation, functional programming and parallelisation | LG |
 |               | Break                                                     |    |
 | 16:00 - 17:30 | Building web interfaces: shiny                            | LG |
-|               | Wrap up                                                   |    |
+|               | Wrap up                                                   | all |
 
 
 ## Useful refs
