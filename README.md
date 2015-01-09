@@ -47,7 +47,7 @@ If you do not have any favourite editor, have a go with
 |               | Break                                                     |    |
 | 11:00 - 12:30 | [Benchmarking, profiling and optimisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-bmark-prof-optim/bmark-prof-optim.md) and calling [C/C++ code](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/rccpp/rc.md) | LG |
 |               | Lunch                                                     |    |
-| 13:30 - 15:30 | Vectorisation, functional programming and parallelisation | LG |
+| 13:30 - 15:30 | [Vectorisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-vectorisation/vectorisation.pdf), [functional programming](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-functional-programming/functional-programming.pdf) and [parallelisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-parallel/parallel.pdf) ([src](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/tree/master/R-parallel/src))| LG |
 |               | Break                                                     |    |
 | 16:00 - 17:30 | Building web interfaces: shiny                            | LG |
 |               | Wrap up                                                   | all |
