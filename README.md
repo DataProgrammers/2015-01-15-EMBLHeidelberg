@@ -53,7 +53,7 @@ install_github("lgatto/sequences")
 
 | When          | What                                           |     |
 |---------------|------------------------------------------------|-----|
-| 09:15 - 10:30 | Testing, Unit testing and debugging                       | LG |
+| 09:15 - 10:30 | [Testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/testing.md), [Unit testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/unittesting.md) and [debugging](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-debugging/debugging.pdf)  | LG |
 |               | Break                                                     |    |
 | 11:00 - 12:30 | Profiling and calling C/C++ code                          | LG |
 |               | Lunch                                                     |    |
