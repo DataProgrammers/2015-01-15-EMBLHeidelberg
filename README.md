@@ -41,6 +41,19 @@ If you do not have any favourite editor, have a go with
 
 ### Day 2
 
+Additional packages
+
+```r
+install.packages(c("RUnit", "microbenchmark"))
+
+source("http://www.bioconductor.org/biocLite.R")
+library("BiocInstaller")
+biocLite("BiocParallel")
+
+library("devtools")
+install_github("lgatto/rauthoring")
+```
+
 | When          | What                                           |     |
 |---------------|------------------------------------------------|-----|
 | 09:15 - 10:30 | [Testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/testing.md), [Unit testing](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/blob/master/R-debugging/unittesting.md) and [debugging](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-debugging/debugging.pdf)  | LG |
@@ -49,13 +62,7 @@ If you do not have any favourite editor, have a go with
 |               | Lunch                                                     |    |
 | 13:30 - 15:30 | [Vectorisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-vectorisation/vectorisation.pdf), [functional programming](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-functional-programming/functional-programming.pdf) and [parallelisation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master/R-parallel/parallel.pdf) ([src](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/tree/master/R-parallel/src))| LG |
 |               | Break                                                     |    |
-| 16:00 - 17:30 | R authoring and building web interfaces: shiny
-
-```r
-library("devtools")
-install_github("lgatto/rauthoring")
-```
-| LG |
+| 16:00 - 17:30 | R authoring and building web interfaces: shiny (vignettes in the `rauthoring` package) | LG |
 |               | Wrap up                                                   | all |
 
 
