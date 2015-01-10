@@ -50,6 +50,10 @@ source("http://www.bioconductor.org/biocLite.R")
 library("BiocInstaller")
 biocLite("BiocParallel")
 
+
+## rauthoring dependencies
+biocLite(c("knitr", "rmarkdown", "markdown", "ReportingTools", "DESeq2"))
+
 library("devtools")
 install_github("lgatto/rauthoring")
 ```
