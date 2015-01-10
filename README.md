@@ -46,10 +46,10 @@ Additional packages
 ```r
 install.packages(c("RUnit", "microbenchmark"))
 
-source("http://www.bioconductor.org/biocLite.R")
 library("BiocInstaller")
+## if BiocInstaller is not installed
+source("http://www.bioconductor.org/biocLite.R")
 biocLite("BiocParallel")
-
 
 ## rauthoring dependencies
 biocLite(c("knitr", "rmarkdown", "markdown", "ReportingTools", "DESeq2"))
