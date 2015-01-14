@@ -1,3 +1,44 @@
+# TL;DR
+
+### Warnings and errors
+
+
+```r
+stop("This is an error")
+warning("This is a warning")
+```
+
+### Trying and catching 
+
+
+```r
+safelog <- function(x) {
+  tryCatch(log(x),
+           error = function(e) "an error",
+           warning = function(e) "a warning")
+}
+
+safelog(3)
+safelog(-5)
+safelog("string")
+```
+
+### Floating point issues
+
+
+```r
+a <- sqrt(2)
+a * a == 2
+a * a - 2
+
+1L + 2L == 3L
+1.0 + 2.0 == 3.0
+0.1 + 0.2 == 0.3
+
+all.equal(0.1 + 0.2, 0.3)
+all.equal(a * a, 2)
+```
+
 # Why test?
 
 * Nobody writes buggy code... sure!

@@ -37,7 +37,7 @@ If you do not have any favourite editor, have a go with
 |               | Lunch                                                    |    |
 | 13:30 - 15:30 | [Package development](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master//RPackageDevelopment/rpd.pdf)     | RS |
 |               | Break                                                    |    |
-| 16:00 - 17:30 | [Advanced issues in package development and documentation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master//RPackageDevelopment/rpd.pdf)) | RS |
+| 16:00 - 17:30 | [Advanced issues in package development and documentation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master//RPackageDevelopment/rpd.pdf) | RS |
 
 ### Day 2
 
