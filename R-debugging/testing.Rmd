@@ -7,7 +7,7 @@ stop("This is an error")
 warning("This is a warning")
 ```
 
-```{r}
+```{r, eval=FALSE}
 stopifnot(TRUE)
 stopifnot(FALSE)
 ```

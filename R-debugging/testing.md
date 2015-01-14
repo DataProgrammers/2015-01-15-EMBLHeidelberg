@@ -14,10 +14,6 @@ stopifnot(TRUE)
 stopifnot(FALSE)
 ```
 
-```
-## Error: FALSE is not TRUE
-```
-
 ### Trying and catching 
 
 
