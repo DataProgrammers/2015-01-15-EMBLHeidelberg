@@ -8,6 +8,16 @@ stop("This is an error")
 warning("This is a warning")
 ```
 
+
+```r
+stopifnot(TRUE)
+stopifnot(FALSE)
+```
+
+```
+## Error: FALSE is not TRUE
+```
+
 ### Trying and catching 
 
 
