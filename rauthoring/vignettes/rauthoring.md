@@ -449,32 +449,58 @@ A few useful links :
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] XML_3.98-1.1            DESeq2_1.7.16          
-##  [3] RcppArmadillo_0.4.600.0 Rcpp_0.11.3            
-##  [5] GenomicRanges_1.19.32   GenomeInfoDb_1.3.12    
-##  [7] IRanges_2.1.35          S4Vectors_0.5.16       
-##  [9] BiocGenerics_0.13.4     rauthoring_0.2.4       
-## [11] knitr_1.8              
+##  [1] XML_3.98-1.1            ReportingTools_2.7.0   
+##  [3] AnnotationDbi_1.29.12   Biobase_2.27.1         
+##  [5] RSQLite_1.0.0           DBI_0.3.1              
+##  [7] DESeq2_1.7.16           RcppArmadillo_0.4.600.0
+##  [9] Rcpp_0.11.3             GenomicRanges_1.19.32  
+## [11] GenomeInfoDb_1.3.12     IRanges_2.1.35         
+## [13] S4Vectors_0.5.16        BiocGenerics_0.13.4    
+## [15] rauthoring_0.2.4        knitr_1.8              
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] acepack_1.3-3.3       annotate_1.45.0       AnnotationDbi_1.29.12
-##  [4] base64enc_0.1-2       BatchJobs_1.5         BBmisc_1.8           
-##  [7] Biobase_2.27.1        BiocParallel_1.1.10   brew_1.0-6           
-## [10] checkmate_1.5.1       cluster_1.15.3        codetools_0.2-9      
-## [13] colorspace_1.2-4      DBI_0.3.1             digest_0.6.8         
-## [16] evaluate_0.5.5        fail_1.2              foreach_1.4.2        
-## [19] foreign_0.8-61        formatR_1.0           Formula_1.1-2        
-## [22] genefilter_1.49.2     geneplotter_1.45.0    ggplot2_1.0.0        
-## [25] grid_3.2.0            gtable_0.1.2          Hmisc_3.14-6         
-## [28] htmltools_0.2.6       httpuv_1.3.2          iterators_1.0.7      
-## [31] lattice_0.20-29       latticeExtra_0.6-26   locfit_1.5-9.1       
-## [34] MASS_7.3-35           mime_0.2              munsell_0.4.2        
-## [37] nnet_7.3-8            plyr_1.8.1            proto_0.3-10         
-## [40] R6_2.0.1              RColorBrewer_1.1-2    reshape2_1.4.1       
-## [43] RJSONIO_1.3-0         rpart_4.1-8           RSQLite_1.0.0        
-## [46] scales_0.2.4          sendmailR_1.2-1       shiny_0.10.2.2       
-## [49] splines_3.2.0         stringr_0.6.2         survival_2.37-7      
-## [52] tools_3.2.0           xtable_1.7-4          XVector_0.7.3
+##  [1] acepack_1.3-3.3           annotate_1.45.0          
+##  [3] AnnotationForge_1.9.2     base64enc_0.1-2          
+##  [5] BatchJobs_1.5             BBmisc_1.8               
+##  [7] BiocParallel_1.1.10       biomaRt_2.23.5           
+##  [9] Biostrings_2.35.7         biovizBase_1.15.1        
+## [11] bitops_1.0-6              brew_1.0-6               
+## [13] BSgenome_1.35.15          Category_2.33.0          
+## [15] checkmate_1.5.1           cluster_1.15.3           
+## [17] codetools_0.2-9           colorspace_1.2-4         
+## [19] dichromat_2.0-0           digest_0.6.8             
+## [21] edgeR_3.9.9               evaluate_0.5.5           
+## [23] fail_1.2                  foreach_1.4.2            
+## [25] foreign_0.8-61            formatR_1.0              
+## [27] Formula_1.1-2             genefilter_1.49.2        
+## [29] geneplotter_1.45.0        GenomicAlignments_1.3.21 
+## [31] GenomicFeatures_1.19.10   GGally_0.5.0             
+## [33] ggbio_1.15.1              ggplot2_1.0.0            
+## [35] GO.db_3.0.0               GOstats_2.33.0           
+## [37] graph_1.45.1              grid_3.2.0               
+## [39] gridExtra_0.9.1           GSEABase_1.29.0          
+## [41] gtable_0.1.2              Hmisc_3.14-6             
+## [43] htmltools_0.2.6           httpuv_1.3.2             
+## [45] hwriter_1.3.2             iterators_1.0.7          
+## [47] lattice_0.20-29           latticeExtra_0.6-26      
+## [49] limma_3.23.6              locfit_1.5-9.1           
+## [51] MASS_7.3-35               Matrix_1.1-4             
+## [53] mime_0.2                  munsell_0.4.2            
+## [55] nnet_7.3-8                OrganismDbi_1.9.0        
+## [57] PFAM.db_3.0.0             plyr_1.8.1               
+## [59] proto_0.3-10              R6_2.0.1                 
+## [61] RBGL_1.43.0               RColorBrewer_1.1-2       
+## [63] RCurl_1.95-4.5            reshape_0.8.5            
+## [65] reshape2_1.4.1            RJSONIO_1.3-0            
+## [67] R.methodsS3_1.6.1         R.oo_1.18.0              
+## [69] rpart_4.1-8               Rsamtools_1.19.25        
+## [71] rtracklayer_1.27.6        R.utils_1.34.0           
+## [73] scales_0.2.4              sendmailR_1.2-1          
+## [75] shiny_0.10.2.2            splines_3.2.0            
+## [77] stringr_0.6.2             survival_2.37-7          
+## [79] tools_3.2.0               VariantAnnotation_1.13.22
+## [81] xtable_1.7-4              XVector_0.7.3            
+## [83] zlibbioc_1.13.0
 ```
 
 # References
