@@ -1,0 +1,34 @@
+A simple Rmarkdown file
+=======================
+
+## Section 1
+
+Exploring `mardown` *formatting* **options**. 
+
+### A sub-section 
+
+My first code chunk
+
+```{r, eval=TRUE, echo=TRUE}
+x <- c("Hello", "world")
+x <- paste(x, collapse = " ")
+cat(x)
+```
+
+### Another sub-section
+
+With figures...
+
+```{r, myfig}
+dfr <- data.frame(x=rnorm(100), y=rnorm(1000))
+plot(dfr$x, dfr$y, main = "Scatter plot")
+library("ggplot2")
+qplot(x, y, data = dfr)
+```
+
+## TODO
+
+- Learn Rmarkdown
+- Write report
+- Share it with collaborators
+
