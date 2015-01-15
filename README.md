@@ -39,6 +39,10 @@ If you do not have any favourite editor, have a go with
 |               | Break                                                    |    |
 | 16:00 - 17:30 | [Advanced issues in package development and documentation](https://github.com/DataProgrammers/2015-01-15-EMBLHeidelberg/raw/master//RPackageDevelopment/rpd.pdf) | RS |
 
+To see a full implementation of the OO and package development
+material, see the [`sequences`](https://github.com/lgatto/sequences)
+package (also on CRAN).
+
 ### Day 2
 
 Additional packages
