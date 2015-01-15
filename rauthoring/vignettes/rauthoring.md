@@ -426,7 +426,7 @@ a table of significant/non-significant features.
 
 A few useful links : 
 - [`shiny` tutorial](http://shiny.rstudio.com/tutorial/)
-- The [`shiny` gallery][widgets](http://shiny.rstudio.com/gallery).
+- [`shiny` widgets](http://shiny.rstudio.com/gallery).
 - [Application layouts](http://shiny.rstudio.com/articles/layout-guide.html)
 
 # Session information
