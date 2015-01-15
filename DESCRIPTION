@@ -1,6 +1,6 @@
 Package: rauthoring
 Title: An introduction to authoring literate programming documents.
-Version: 0.2.4
+Version: 0.2.5
 Author: Laurent Gatto <lg390@cam.ac.uk>
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: An introduction to literate programming and reproducible
