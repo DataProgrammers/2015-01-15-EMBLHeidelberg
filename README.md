@@ -55,6 +55,8 @@ library("BiocInstaller")
 source("http://www.bioconductor.org/biocLite.R")
 biocLite("BiocParallel")
 
+install.packages("shiny")
+
 ## rauthoring dependencies
 biocLite(c("knitr", "rmarkdown", "markdown", "ReportingTools", "DESeq2"))
 
